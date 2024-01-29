@@ -20,10 +20,10 @@ const MAIN_VISUAL = new Swiper('.main_visual_slide', {
             document.querySelector('.mainVisual .b_inner .num').classList.add('on');
         },
         slideChangeTransitionEnd: function () {
-            document.querySelector('.mainVisual .b_inner .num').classList.remove('on');
+            document.querySelector('.mainVisual .b_inner .num').classList.add('on');
         },
         slideChangeTransitionStart: function () {
-            document.querySelector('.mainVisual .b_inner .num').classList.add('on');
+            document.querySelector('.mainVisual .b_inner .num').classList.remove('on');
         },
     }
 })
