@@ -53,6 +53,18 @@
     line-height: 26px;
 }
 
+
+.default .__animation {
+    opacity: 0;
+    transform: translate(0, 100px);
+}
+
+.default.on .__animation {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+}
+
 #header {
     position: fixed;
     top: 0;
@@ -402,6 +414,20 @@
     width: 1px;
     height: 100%;
     background: var(--dark-gray);
+}
+
+.mainContent .main_content_slide::after {
+    content: "premium";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'Noto Serif KR';
+    font-size: 80px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.25);
 }
 
 .mainContent .main_content_slide .itm {

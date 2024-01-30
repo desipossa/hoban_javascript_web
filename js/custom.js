@@ -1,6 +1,13 @@
+const SECTION = document.querySelectorAll('.section');
+
 const Fullpage = new fullpage('#content', {
     scrollOverflow: false, // line-height : 1 에서 스크롤 생기는 거 없애줘...
     paddingTop: '101px',
+    afterLoad: function (o, d, t) {
+        console.log(d.index);
+        SECTION.forEach(it => it.classList.remove('on'));
+        SECTION[d.index].classList.add('on');
+    }
 });
 
 const MAIN_VISUAL_SLIDE = new Swiper('.main_visual_slide', {
