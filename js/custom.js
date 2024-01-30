@@ -3,7 +3,7 @@ const Fullpage = new fullpage('#content', {
     paddingTop: '101px',
 });
 
-const MAIN_VISUAL = new Swiper('.main_visual_slide', {
+const MAIN_VISUAL_SLIDE = new Swiper('.main_visual_slide', {
     loop: true,
     slideActiveClass: 'on',
     autoplay: {
@@ -26,4 +26,21 @@ const MAIN_VISUAL = new Swiper('.main_visual_slide', {
             document.querySelector('.mainVisual .b_inner .num').classList.remove('on');
         },
     }
-})
+});
+
+const MAIN_CONTENT_SLIDE = new Swiper('.main_content_slide', {
+    loop: true,
+    slideActiveClass: 'on',
+    slidesPerView: 4,
+    spaceBetween: 30,
+});
+
+const MAIN_CONTENT_SLIDE_BUTTON = document.querySelectorAll('.main_content_slide button');
+
+
+MAIN_CONTENT_SLIDE_BUTTON[0].addEventListener('click', () => {
+    MAIN_CONTENT_SLIDE.slidePrev();
+});
+MAIN_CONTENT_SLIDE_BUTTON[1].addEventListener('click', () => {
+    MAIN_CONTENT_SLIDE.slideNext();
+});
