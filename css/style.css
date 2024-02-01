@@ -62,7 +62,7 @@
 .default.on .__animation {
     opacity: 1;
     transform: translate(0, 0);
-    transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+    transition: opacity 0.5s, transform 0.5s;
 }
 
 #header {
@@ -298,6 +298,16 @@
     clip-path: polygon(50% 0, 100% 15%, 100% 85%, 50% 100%, 0 85%, 0 15%);
 }
 
+.mainVisual .con li a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+}
+
 .mainVisual .con li:nth-child(even) a::before {
     background: var(--secondary-color);
 }
@@ -366,16 +376,17 @@
     content: "";
     position: absolute;
     top: 26px;
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: var(--primary-color);
-    left: calc(50% - 3px);
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .mainVisual .b_inner .num.on::after {
     top: 170px;
-    transition: 3s;
+    transition: 4s;
 }
 
 .mainVisual .b_inner .scroll {
@@ -388,7 +399,7 @@
 }
 
 .mainContent {
-    background: url(../images/content_bg01.jpg) no-repeat center 100px;
+    background: url(../images/content_bg01.jpg) no-repeat fixed center 100px;
 }
 
 .mainContent .title {
@@ -418,10 +429,12 @@
 
 .mainContent .main_content_slide::after {
     content: "premium";
+    white-space: pre-wrap;
 
     position: absolute;
     top: 0;
     right: 0;
+    width: 600px;
     font-family: 'Noto Serif KR';
     font-size: 80px;
     font-weight: 800;
@@ -563,6 +576,7 @@
     z-index: 999;
 
     display: inline-flex;
+    opacity: 0.5;
 }
 
 .mainContent .main_content_slide .arrows button {
@@ -571,5 +585,5 @@
 }
 
 .mainContent .main_content_slide .arrows button~button {
-    border-left: 1px solid var(--light-gray);
+    border-left: 1px solid var(--dark-gray);
 }

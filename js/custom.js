@@ -2,6 +2,7 @@ const SECTION = document.querySelectorAll('.section');
 
 const Fullpage = new fullpage('#content', {
     scrollOverflow: false, // line-height : 1 에서 스크롤 생기는 거 없애줘...
+    //css3: false,
     paddingTop: '101px',
     afterLoad: function (o, d, t) {
         console.log(d.index);
@@ -23,13 +24,13 @@ const MAIN_VISUAL_SLIDE = new Swiper('.main_visual_slide', {
     },
 
     on: {
-        init: function () {
+        init: () => {
             document.querySelector('.mainVisual .b_inner .num').classList.add('on');
         },
-        slideChangeTransitionEnd: function () {
+        slideChangeTransitionEnd: () => {
             document.querySelector('.mainVisual .b_inner .num').classList.add('on');
         },
-        slideChangeTransitionStart: function () {
+        slideChangeTransitionStart: () => {
             document.querySelector('.mainVisual .b_inner .num').classList.remove('on');
         },
     }
