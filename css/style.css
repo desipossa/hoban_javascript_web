@@ -54,6 +54,8 @@
 }
 
 
+
+
 .default .__animation {
     opacity: 0;
     transform: translate(0, 100px);
@@ -63,6 +65,16 @@
     opacity: 1;
     transform: translate(0, 0);
     transition: opacity 0.5s, transform 0.5s;
+}
+
+.default_btn {
+    display: inline-block;
+    border: none;
+    background: transparent;
+    padding: 16px 32px;
+    border-top: 1px solid var(--dark-gray);
+    border-bottom: 1px solid var(--dark-gray);
+    text-transform: uppercase;
 }
 
 #header {
@@ -586,4 +598,19 @@
 
 .mainContent .main_content_slide .arrows button~button {
     border-left: 1px solid var(--dark-gray);
+}
+
+.mainDesign .b_inner {
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+    background: url(../images/content_bg02.jpg) no-repeat right center/auto 100%;
+}
+
+.mainDesign .title_area h2 {
+    margin: 0 0 48px 0;
+}
+
+.mainDesign .title_area p {
+    margin: 0 0 48px 0;
 }
